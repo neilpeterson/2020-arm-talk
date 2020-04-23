@@ -1,7 +1,12 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "newGuid": {
+            "type": "string",
+            "defaultValue": "[newGuid()]"
+        }
+    },
     "variables": {
         "identity": "/subscriptions/10a09851-d632-420e-ad20-2cd774fd4d41/resourcegroups/nepeters-keyvault/providers/Microsoft.ManagedIdentity/userAssignedIdentities/nepeters-identity"
     },
@@ -9,23 +14,24 @@
         {
             "type": "Microsoft.Resources/deploymentScripts",
             "apiVersion": "2019-10-01-preview",
-            "name": "deploymentscript", 
+            "name": "deploymentscript",
             "location": "[resourceGroup().location]",
             "identity": {
                 "type": "UserAssigned",
                 "userAssignedIdentities": {
-                    "[variables('identity')]": {}
+                    "[variables('identity')]": {
+                    }
                 }
             },
             "kind": "AzureCLI",
             "properties": {
-                "forceUpdateTag": "[newGuid()]", 
-                "azCliVersion": "2.3.1",
+                "forceUpdateTag": "[parameters('newGuid')]",
+                "azCliVersion": "2.0.80",
                 "timeout": "PT30M",
                 "retentionInterval": "P1D",
                 "cleanupPreference": "OnSuccess",
-                "arguments": "", 
-                "PrimaryScriptUri": ""
+                "arguments": "",
+                "PrimaryScriptUri": "https://raw.githubusercontent.com/neilpeterson/2020-arm-talk/master/deployment-script/copy-file.sh"
             }
         }
     ]
