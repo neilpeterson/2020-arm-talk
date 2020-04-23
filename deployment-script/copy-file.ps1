@@ -5,3 +5,5 @@ Invoke-WebRequest -Uri https://aka.ms/downloadazcopy-v10-windows -OutFile AzCopy
 Expand-Archive ./AzCopy.zip ./AzCopy -Force
 
 get-childitem
+
+azcopy login --identity
