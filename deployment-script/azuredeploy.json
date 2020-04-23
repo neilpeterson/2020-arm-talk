@@ -29,7 +29,7 @@
                 "azCliVersion": "2.0.80",
                 "timeout": "PT30M",
                 "retentionInterval": "P1D",
-                "cleanupPreference": "OnSuccess",
+                "cleanupPreference": "OnExpiration",
                 "arguments": "",
                 "PrimaryScriptUri": "https://raw.githubusercontent.com/neilpeterson/2020-arm-talk/master/deployment-script/copy-file.sh"
             }
