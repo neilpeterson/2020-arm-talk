@@ -23,11 +23,9 @@
                     }
                 }
             },
-            // "kind": "AzureCLI",
             "kind": "AzurePowerShell",
             "properties": {
                 "forceUpdateTag": "[parameters('newGuid')]",
-                // "azCliVersion": "2.0.80",
                 "azPowerShellVersion": "3.0",
                 "timeout": "PT30M",
                 "retentionInterval": "P1D",
