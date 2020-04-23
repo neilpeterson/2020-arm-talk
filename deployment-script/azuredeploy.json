@@ -23,15 +23,16 @@
                     }
                 }
             },
-            "kind": "AzureCLI",
+            // "kind": "AzureCLI",
+            "kind": "AzurePowerShell",
             "properties": {
                 "forceUpdateTag": "[parameters('newGuid')]",
-                "azCliVersion": "2.0.80",
+                // "azCliVersion": "2.0.80",
+                "azPowerShellVersion": "3.0",
                 "timeout": "PT30M",
                 "retentionInterval": "P1D",
                 "cleanupPreference": "OnExpiration",
-                "arguments": "",
-                "PrimaryScriptUri": "https://raw.githubusercontent.com/neilpeterson/2020-arm-talk/master/deployment-script/copy-file.sh"
+                "PrimaryScriptUri": "https://raw.githubusercontent.com/neilpeterson/2020-arm-talk/master/deployment-script/copy-file.ps1"
             }
         }
     ]
