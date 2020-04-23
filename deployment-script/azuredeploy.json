@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {
+        "identity": "/subscriptions/10a09851-d632-420e-ad20-2cd774fd4d41/resourcegroups/nepeters-keyvault/providers/Microsoft.ManagedIdentity/userAssignedIdentities/nepeters-identity"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deploymentScripts",
+            "apiVersion": "2019-10-01-preview",
+            "name": "deploymentscript", 
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                    "[variables('identity')]": {}
+                }
+            },
+            "kind": "AzureCLI",
+            "properties": {
+                "forceUpdateTag": "[newGuid()]", 
+                "azCliVersion": "2.3.1",
+                "timeout": "PT30M",
+                "retentionInterval": "P1D",
+                "cleanupPreference": "OnSuccess",
+                "arguments": "", 
+                "PrimaryScriptUri": ""
+            }
+        }
+    ]
+}
