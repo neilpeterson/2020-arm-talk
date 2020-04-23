@@ -6,4 +6,4 @@ Expand-Archive ./AzCopy.zip . -Force
 
 get-childitem
 
-azcopy login --identity
+# azcopy login --identity
