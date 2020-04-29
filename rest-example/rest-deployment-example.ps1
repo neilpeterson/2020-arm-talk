@@ -8,7 +8,7 @@ $password = (Get-AzKeyVaultSecret -VaultName $keyVaultName -Name password).Secre
 $subscription = (Get-AzKeyVaultSecret -VaultName $keyVaultName -Name subscription).SecretValueText
 
 # Deployment values
-$resourceGroup = "rest-demo"
+$resourceGroup = "rest-demo-one"
 $deploymentName = "nepetersrestdemo"
 
 # Get Bearer Token
