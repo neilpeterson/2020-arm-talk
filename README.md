@@ -1,10 +1,7 @@
-ARM Demo:
+REST Demo:
 
-- Swagger repository
-- Schemas repository
 - REST deployment (resource)
-- REST deployment (template)
-
+- Show results
 
 VS Code Demo:
 
@@ -19,12 +16,11 @@ VS Code Demo:
 - Create parameter file
 - Show full validation
 
-Other:
+What-If demo:
 
-- ARM Template Toolkit
+- az deployment group what-if --template-file sample-templates/azuredeploy.json --resource-group demo1234
 
+ARM Template Toolkit Demo:
 
-Flow:
-
-Azure Resource Manager Overview
-How things flow (API > Swager > Resource Schema)
+- Import-Module /Users/neilpeterson/Documents/code/arm-ttk/arm-ttk/
+- Test-AzTemplate -TemplatePath sample-templates/azuredeploy.json
